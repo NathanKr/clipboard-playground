@@ -3,5 +3,6 @@ I have contact tab on www.nathankrasney.com with my email. I want the user to cl
 
 <h2>Points of interest</h2>
 <ul>
-<li>I am using react but the support of js ion clipboard is in javascript via navigator so it can be used also outside of react</li>
+<li>I am using react but the support of js for clipboard is in javascript via navigator so it can be used also outside of react</li>
 </ul>
+
