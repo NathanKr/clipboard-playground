@@ -1,14 +1,14 @@
 import "./App.css";
-import ClipboardWithTooltip from "./components/clipboard-with-tooltip";
+import SimpleClipboard from "./components/simple-clipboard";
 
 function App() {
   const textToCopy = "nathan@nathankrasney.com";
 
   return (
     <>
-      {/* <p>Click on the button will copy {textToCopy} to the clipboard</p>
-      <p>You can use later CTRL V to retrive it</p> */}
-      <ClipboardWithTooltip valueCopiedToClipboard={textToCopy} />
+      <p>Click on the button will copy {textToCopy} to the clipboard</p>
+      <p>You can use later CTRL V to retrive it</p>
+      <SimpleClipboard valueCopiedToClipboard={textToCopy} />
     </>
   );
 }
