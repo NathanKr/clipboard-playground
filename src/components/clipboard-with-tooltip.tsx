@@ -1,30 +1,22 @@
-import { FC, useState } from "react";
-import styles from "../styles/clipboard-with-tooltip.module.css";
+import { FC } from "react";
 
-interface IProps{
-    valueCopiedToClipboard : string
+interface IProps {
+  valueCopiedToClipboard: string;
 }
 
-const ClipboardWithTooltip: FC<IProps> = ({valueCopiedToClipboard}) => {
-  const [tooltipText, setTooltipText] = useState<string>("Copy to clipboard");
+const ClipboardWithTooltip: FC<IProps> = ({ valueCopiedToClipboard }) => {
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(valueCopiedToClipboard).then(() => {
-      setTooltipText(`Copied: ${valueCopiedToClipboard}`);
+      console.log(`======> Copied: ${valueCopiedToClipboard}`);
     });
   };
 
-  const handleMouseOut = () => {
-    setTooltipText("Copy to clipboard");
-  };
-
+  
   return (
-    <div className={styles.tooltip}>
-      <button onClick={handleCopyClick} onMouseOut={handleMouseOut}>
-        <span className={styles.tooltiptext}>
-          {tooltipText}
-        </span>
-        Copy text
+    <div>
+      <button title="copy to clipboard" onClick={handleCopyClick}>
+        Click
       </button>
     </div>
   );

@@ -6,8 +6,8 @@ function App() {
 
   return (
     <>
-      <p>Click on the button will copy {textToCopy} to the clipboard</p>
-      <p>You can use later CTRL V to retrive it</p>
+      {/* <p>Click on the button will copy {textToCopy} to the clipboard</p>
+      <p>You can use later CTRL V to retrive it</p> */}
       <ClipboardWithTooltip valueCopiedToClipboard={textToCopy} />
     </>
   );
