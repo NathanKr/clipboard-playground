@@ -1,5 +1,5 @@
 import "./App.css";
-import SimpleClipboard from "./components/simple-clipboard";
+import GenericClipboard from "./components/generic-clipboard";
 
 function App() {
   const textToCopy = "nathan@nathankrasney.com";
@@ -8,7 +8,9 @@ function App() {
     <>
       <p>Click on the button will copy {textToCopy} to the clipboard</p>
       <p>You can use later CTRL V to retrive it</p>
-      <SimpleClipboard valueCopiedToClipboard={textToCopy} />
+      <GenericClipboard valueCopiedToClipboard={textToCopy}>
+        <button>Click</button>
+      </GenericClipboard>
     </>
   );
 }

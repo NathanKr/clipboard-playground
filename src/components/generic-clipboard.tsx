@@ -1,11 +1,19 @@
-import { FC, useState, useEffect } from "react";
-import styles from "../styles/simple-clipboard.module.css";
+import {
+  FC,
+  useState,
+  useEffect,
+  ReactNode,
+  cloneElement,
+  ReactElement,
+} from "react";
+import styles from "../styles/generic-clipboard.module.css";
 
 interface IProps {
   valueCopiedToClipboard: string;
+  children: ReactNode; // Allow any ReactNode as children
 }
 
-const SimpleClipboard: FC<IProps> = ({ valueCopiedToClipboard }) => {
+const GenericClipboard: FC<IProps> = ({ valueCopiedToClipboard, children }) => {
   const [status, setStatus] = useState("");
 
   const handleCopyClick = () => {
@@ -33,10 +41,10 @@ const SimpleClipboard: FC<IProps> = ({ valueCopiedToClipboard }) => {
 
   return (
     <div>
-      <button onClick={handleCopyClick}>Click</button>
+      {cloneElement(children as ReactElement, { onClick: handleCopyClick })}
       {elemStatus}
     </div>
   );
 };
 
-export default SimpleClipboard;
+export default GenericClipboard;
